@@ -93,3 +93,28 @@ The update is now handled in one place as well: the `#on_value` callback we've
 added to the stream. Same deal: this was in two places, now it's in one.
 
 That's really it. Neat.
+
+Running this yourself
+---------------------
+
+Okay, so I really wanted to make this mega-easy, so I included a
+Gemfile... the issue is that Shoes 4 is still in flux, and so it
+doesn't include binaries in the gem. Nuts. So, you'll have to
+clone down Shoes, and then run it from there. 
+
+Don't forget: Shoes 4 is based on JRuby, so you have to be
+using that.
+
+Anyway, here's what you have to do:
+
+```bash
+$ git clone https://github.com/shoes/shoes4.git
+$ git clone https://github.com/steveklabnik/frappuccino.git
+$ git clone https://github.com/steveklabnik/frp_shoes.git
+$ cd frappuccino
+$ bundle
+$ rake install
+$ cd ../shoes4
+$ bundle
+$ bin/swt-shoooes ../frp_shoes/frp.rb
+```
