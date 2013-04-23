@@ -16,7 +16,7 @@ Shoes.app :height => 150, :width => 250 do
   @plus = Button.new(:+)
   @minus = Button.new(:-)
 
-  @stream = Frappuccino::Stream.new([@plus, @minus])
+  @stream = Frappuccino::Stream.new(@plus, @minus)
 
   @counter = @stream
              .map do |event|
