@@ -19,17 +19,8 @@ Shoes.app :height => 150, :width => 250 do
   @stream = Frappuccino::Stream.new(@plus, @minus)
 
   @counter = @stream
-             .map do |event|
-                case event
-                when :+
-                  1
-                when :-
-                  -1
-                else
-                  0
-                end
-              end
-            .inject(0) {|sum, n| sum + n }
+              .map_stream(:+ => 1, :- => -1, :default => 0)
+              .inject(0) {|sum, n| sum + n }
 
   stack :margin => 10 do
     button "+1" do
