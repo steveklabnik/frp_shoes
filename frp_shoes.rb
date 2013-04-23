@@ -16,11 +16,9 @@ Shoes.app :height => 150, :width => 250 do
   @plus = Button.new(:+)
   @minus = Button.new(:-)
 
-  @stream_one = Frappuccino::Stream.new(@plus)
-  @stream_two = Frappuccino::Stream.new(@minus)
+  @stream = Frappuccino::Stream.new([@plus, @minus])
 
-  @merged_stream = Frappuccino::Stream.merge(@stream_one, @stream_two)
-  @counter = @merged_stream
+  @counter = @stream
              .map do |event|
                 case event
                 when :+
