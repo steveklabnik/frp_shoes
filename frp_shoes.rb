@@ -43,9 +43,9 @@ Shoes.app :height => 150, :width => 250 do
     end
 
     @label = para "Current count: #{@counter.to_i}"
-  end
 
-  every do
-    @label.replace "Current count: #{@counter.to_i}"
+    @counter.on_value do |value|
+      @label.replace "Current count: #{value}"
+    end
   end
 end
