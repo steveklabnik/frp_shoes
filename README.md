@@ -85,7 +85,7 @@ a general antipattern. It's nice for small things, which is one of the things
 Shoes is great at, but bigger apps (like Hackety) get out of control really
 quickly.
 
-Constructing the count is no longer spit between the two buttons, it's in the
+Constructing the count is no longer split between the two buttons, it's in the
 `#inject` call. This is a win: it went from being spread out among two places
 to being in just one place.
 
